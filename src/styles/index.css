@@ -1,12 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    background-color: white;
+    background-image: url(https://mlt4nthayffh.i.optimole.com/cb:yymS.46d25/w:auto/h:auto/q:75/f:avif/https://www.nixsensor.com/wp-content/uploads/2022/04/AdobeStock_428593146-scaled.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-/* 
+h1 {
+    color: rgb(172, 143, 105);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    text-shadow: 2px 4px 4px rgb(0, 0, 0);
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+ul .list-item, .list-title {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.104);
+    background: rgb(172, 143, 105);
+}
 
-*/
+p {
+    padding: 10px;
+    background: rgb(172, 143, 105);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    border: none;
+    width: 100%;
+}
+
+.ocultar {
+    visibility: hidden;
+    margin-left: 5%;
+    color: rgb(148, 126, 96);
+    background-color: aliceblue;
+}
+
+.ocultar:hover {
+    visibility: hidden;
+    margin-left: 5%;
+    color: yellow;
+    background-color: black;
+}
+
+li:hover * {
+    visibility: visible;
+}

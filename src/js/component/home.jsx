@@ -7,7 +7,7 @@ const Home = () => {
 
 	const fetchToDoList = async () => {
 		try {
-			const response = await fetch("/todos/user/username");
+			const response = await fetch("https://assets.breatheco.de/apis/fake/todos/user/listaCeleste");
 			const data = await response.json();
 			settoDos(data);
 		} catch (error) {
@@ -21,7 +21,7 @@ const Home = () => {
 
 	const updateToDoList = async (newToDoList) => {
 		try {
-			const response = await fetch("/todos/user/username", {
+			const response = await fetch("https://assets.breatheco.de/apis/fake/todos/user/listaCeleste", {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json"
@@ -73,7 +73,7 @@ const Home = () => {
 
 					</li>
 					{toDos.map((item, index) => (
-						<li className="list-item">{item}
+						<li className="list-item">{item.label}
 							<button className="ocultar btn btn-sm" type="button" onClick={() => handleDeleteToDo(index)}><i className="fas fa-trash-alt"></i></button>
 						</li>
 					))}

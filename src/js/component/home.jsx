@@ -35,8 +35,23 @@ const Home = () => {
 		}
 	};
 
+	const deleteToDoList = async () => {
+		try {
+			const response = await fetch("https://assets.breatheco.de/apis/fake/todos/user/listaCeleste", {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json"
+				},
+			});
+			const data = await response.json();
+			console.log(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	const handleAddToDo = (newToDo) => {
-		const newToDoList = toDos.concat([newToDo]);
+		const newToDoList = toDos.concat({ label: newToDo, done: false });
 		settoDos(newToDoList);
 		updateToDoList(newToDoList);
 	};
@@ -49,7 +64,7 @@ const Home = () => {
 
 	const handleDeleteAllToDos = () => {
 		settoDos([]);
-		updateToDoList([]);
+		deleteToDoList([]);
 	};
 
 	return (
@@ -73,7 +88,7 @@ const Home = () => {
 
 					</li>
 					{toDos.map((item, index) => (
-						<li className="list-item">{item.label}
+						<li key={index} className="list-item">{item.label}
 							<button className="ocultar btn btn-sm" type="button" onClick={() => handleDeleteToDo(index)}><i className="fas fa-trash-alt"></i></button>
 						</li>
 					))}

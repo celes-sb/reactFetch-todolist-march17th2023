@@ -62,11 +62,6 @@ const Home = () => {
 		updateToDoList(newToDoList);
 	};
 
-	const handleDeleteAllToDos = () => {
-		settoDos([]);
-		deleteToDoList([]);
-	};
-
 	return (
 		<>
 			<div className="container-fluid row d-flex justify-content-center align-items-center p-2">
@@ -87,15 +82,13 @@ const Home = () => {
 						/>
 
 					</li>
-					{toDos.map((item, index) => (
+					{toDos && toDos.length > 0 && toDos.map((item, index) => (
+
 						<li key={index} className="list-item">{item.label}
 							<button className="ocultar btn btn-sm" type="button" onClick={() => handleDeleteToDo(index)}><i className="fas fa-trash-alt"></i></button>
 						</li>
 					))}
 					<li className="list-item text-end"><em>{toDos.length} item(s) left.-</em></li>
-					<li className="list-item text-end">
-						<button className="btn btn-sm btn-danger" type="button" onClick={handleDeleteAllToDos}>Delete All</button>
-					</li>
 				</ul>
 			</div>
 		</>
